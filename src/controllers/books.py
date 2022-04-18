@@ -1,4 +1,4 @@
-from flask_restx import Resource
+from flask_restx import Api, Resource
 
 from src.server.instance import server
 
@@ -15,7 +15,7 @@ class BookList(Resource):
   def get(self, ):
     return books_db
 
-
-@app.route('/')
-def homepage():
-  return 'funcionando'
+  def post(self, ):
+    response = api.payload
+    books_db.append(response)
+    return response, 200
