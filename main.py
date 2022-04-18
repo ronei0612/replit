@@ -1,5 +1,17 @@
-from src.server.instance import server
+#from src.server.instance import server
 
-from src.controllers.books import *
+#from src.controllers.books import *
 
-server.run()
+#server.run()
+
+
+
+
+from flask import Flask
+
+app = Flask(__name__)
+app.run(host='0.0.0.0')
+
+@app.route('/')
+def homepage():
+  return 'funcionando'
